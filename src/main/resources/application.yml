@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dreams_shops_db
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: ikram
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format-sql: true
+api:
+  prefix: /api/v1
+auth:
+  token:
+    jwtSecret: 367639792442246294848408351665464576058713474377721742543246620
+    expirationInMils: 3600000  # 1 heure
+

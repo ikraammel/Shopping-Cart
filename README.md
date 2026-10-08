@@ -1,42 +1,57 @@
-# Fashion E-Commerce — Shopping Cart Backend
+# Shopping Cart — Spring Boot REST API
 
-Backend REST API for an e-commerce application, associated with a larger fashion-shopping project. This repository contains the Java backend, not the React frontend.
+A backend e-commerce demonstration project built with Java and Spring Boot. It provides REST endpoints for managing products, categories, images, customer accounts, shopping carts, and orders.
 
 ## Features
 
-- Product, category and product-image management
+- Product, category, and product-image management
 - Shopping cart and cart-item operations
-- Order and order-item management
-- User accounts and role entities
-- JWT authentication with Spring Security
-- DTO-based REST API endpoints
+- Customer orders and order-item management
+- User accounts and roles
+- JWT-based authentication with Spring Security
+- Structured DTOs, request/response models, and exception handling
 
-## Tech Stack
+## Technology Stack
 
-Java 17 · Spring Boot 3.4.4 · Spring Security · Spring Data JPA · PostgreSQL · JWT · Maven
+- Java 17, Spring Boot 3.4.4
+- Spring Web, Spring Security, Spring Data JPA
+- PostgreSQL
+- JWT (JJWT)
+- Maven
 
-## Structure
+## Project Structure
 
-- `controller/` — API endpoints
-- `service/` — business logic
-- `model/` — JPA entities
-- `repositories/` — persistence
-- `security/` — JWT and security configuration
-- `dto/` — API data transfer objects
+```text
+src/main/java/com/dailycodework/dreamshops/
+├── controller/       # REST API endpoints
+├── service/          # Business logic
+├── model/            # JPA entities
+├── repositories/     # Data access
+├── security/         # Authentication and JWT filters
+├── dto/              # Data transfer objects
+├── request/          # API request payloads
+└── response/         # API responses
+```
 
-## Run Locally
+## Getting Started
 
 1. Install Java 17 and PostgreSQL.
-2. Clone this repository.
-3. Create a local PostgreSQL database and configure your database credentials and JWT secret using secure local settings.
+2. Clone the repository:
+
+```bash
+git clone https://github.com/ikraammel/Shopping-Cart.git
+cd Shopping-Cart
+```
+
+3. Set up a PostgreSQL database and configure database credentials and a JWT signing secret securely for your local environment.
 4. Start the backend:
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-The API is configured with the `/api/v1` prefix.
+On Windows, use `mvnw.cmd spring-boot:run`.
 
-## Related Project
+The API uses the `/api/v1` prefix.
 
-The wider fashion e-commerce project includes React and OAuth2 according to the project description. Those components are not present in this backend repository.
+> **Security note:** Avoid committing database passwords or JWT secrets. Replace any exposed credentials before deployment.
